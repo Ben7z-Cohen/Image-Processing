@@ -1,9 +1,11 @@
 Overview
+
 This exercise deals with neural networks and their application to image restoration. In this exercise you
 will develop a general workflow for training networks to restore corrupted images, and then apply this
 workflow on two different tasks: (i) image denoising, (ii) image deblurring.
 
 Background
+
 Before you start working on the exercise it is recommended that you review the lecture slides covering
 neural networks, and how to implement them using the Keras framework. To recap the relevant part of
 the lecture: there are many possible ways to use neural networks for image restoration. The method you
@@ -16,6 +18,7 @@ class.
 
 
 Links for dataset:
+
 image dataset : https://drive.google.com/open?id=1LXsqbbCxDVdvyMAyaWft1u5NcAc8Ftm6
 
 text dataset : https://drive.google.com/open?id=1h0ZBym1VEU-dw0MSyxyVe8N3C9tz8MIn
