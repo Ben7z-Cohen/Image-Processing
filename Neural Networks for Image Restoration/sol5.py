@@ -122,7 +122,7 @@ def build_nn_model(height, width, num_channels, num_res_blocks):
     """
     #Input for keras
     set_input = Input(shape = (DIM, height, width))
-    layer = Convolution2D(num_channels, CONVHIGHT, CONVWIDTH border_mode='same')(set_input)
+    layer = Convolution2D(num_channels, CONVHIGHT, CONVWIDTH, border_mode='same')(set_input)
     layer = Activation('relu')(layer)
     head_layer = layer
     for i in range(num_res_blocks):
