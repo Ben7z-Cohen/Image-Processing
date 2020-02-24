@@ -1,4 +1,4 @@
-Overview
+**Overview**<br>
 
 This exercise deals with neural networks and their application to image restoration. In this exercise 
 I've developed a general workflow for training networks to restore corrupted images and then applied this
@@ -15,5 +15,5 @@ patch separately, by applying the “ConvNet Trick” for approximating.
 
 Dataset Links:
 
-image dataset: https://drive.google.com/open?id=1LXsqbbCxDVdvyMAyaWft1u5NcAc8Ftm6
+image dataset: https://drive.google.com/open?id=1LXsqbbCxDVdvyMAyaWft1u5NcAc8Ftm6 <br/>
 text dataset:  https://drive.google.com/open?id=1h0ZBym1VEU-dw0MSyxyVe8N3C9tz8MIn
