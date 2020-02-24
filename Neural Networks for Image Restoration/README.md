@@ -2,8 +2,8 @@
 This exercise deals with neural networks and their application to image restoration. In this exercise 
 I've developed a general workflow for training networks to restore corrupted images and then applied this
 workflow on two different tasks: <br/>
--image denoising
--image deblurring.
+*image denoising.<br/>
+*image deblurring.<br/>
 
 **Background**<br>
 The method I've implemented consists of the following three steps:
