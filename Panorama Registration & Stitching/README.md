@@ -1,6 +1,6 @@
-In this exercise you will be guided through the steps discussed in class to perform automatic ”Stereo
+In this exercise I wase guided through the steps discussed in class to perform automatic ”Stereo
 Mosaicking”. The input of such an algorithm is a sequence of images scanning a scene from left to right
-(due to camera rotation and/or translation - we assume rigid transform between images), with significant
+(due to camera rotation and/or translation -  assuming rigid transform between images), with significant
 overlap in the field of view of consecutive frames. This exercise covers the following steps:
 
 • Registration: The geometric transformation between each consecutive image pair is found by de-
