@@ -26,4 +26,4 @@ run `main.py`<br/>
 
 **Notes:**<br>
 1. Models parameters can be found in `model_parameters.py`.<br/> 
-2. Quicker training mode can be applied by changing the quick_mode argument in the functions learn_deblurring_model/learn_denoising_model to 'True', in sol5.py.  
+2. Quicker training mode can be applied by changing the quick_mode argument in the functions learn_deblurring_model/learn_denoising_model to 'True', in `sol5.py`.  
