@@ -17,12 +17,12 @@ Image dataset: https://drive.google.com/open?id=1LXsqbbCxDVdvyMAyaWft1u5NcAc8Ftm
 Text dataset:  https://drive.google.com/open?id=1h0ZBym1VEU-dw0MSyxyVe8N3C9tz8MIn 
 
 #### How to run?<br/>
-I've wrapped the exercise with console application. 
-1.For image denoising, download the images from the image dataset to image_dataset\train folder inside the project.
-2.For image deblurring, dowload the images from the text dataset to text_dataset\\train folder inside the project.
+I've wrapped the exercise with console application.<br/>
+1.For image denoising, download the images from the image dataset to image_dataset\train folder inside the project.<br/>
+2.For image deblurring, dowload the images from the text dataset to text_dataset\\train folder inside the project.<br/>
 `pip install -r requirements.txt`<br/>
 run `main.py`<br/>
 <br/>
 *Notes:*<br/> 
-1.If you want to play with the models paremters you can go to model_parameters.py.
+1.If you want to play with the models paremters you can go to model_parameters.py.<br/> 
 2.If you want to train the models quicker, go to sol5.py and change the quick_mode argument in the functions learn_deblurring_model/learn_denoising_model to TRUE
