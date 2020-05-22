@@ -1,5 +1,5 @@
 **Overview**<br>
-This exercise deals with neural networks and their application to image restoration. In this exercise 
+This exercise deals with neural networks and their application for image restoration. In this exercise 
 I've developed a general workflow for training networks to restore corrupted images and then applied this
 workflow on two different tasks: <br/>
 1.Image denoising.<br/>
@@ -9,7 +9,7 @@ workflow on two different tasks: <br/>
 The method I've implemented consists of the following three steps:
 1.Collecting “clean” images, applying simulated random corruptions and extracting small patches.
 2.Training a neural network to map from corrupted patches to clean patches.
-3.Given a corrupted image, I've used the trained network to restore the complete images by restoring each
+3.Given a corrupted image,I've used the trained network to restore the complete images by restoring each
 patch separately, by applying the “ConvNet Trick” for approximating.
 
 **Dataset Links:**<br>
