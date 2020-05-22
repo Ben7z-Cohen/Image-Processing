@@ -23,8 +23,7 @@ def read_image(filename, representation):
     image_float /= NORMALIZATION
 
     if representation == Representation.RGB:
-        im_g = rgb2gray(image)
-        return im_g
+        return rgb2gray(image)
 
     elif representation == Representation.GRAY:
         return image_float
@@ -43,10 +42,9 @@ def create_kernel(kernel_size):
     return kernel / np.sum(kernel)
 
 
-def build_gaussian_pyramid(im, max_levels, filter_size):
-    pyr = [im]
+def build_gaussian_pyramid(image, max_levels, filter_size):
+    pyr = [image]
     filter_vec = create_kernel(filter_size)
-    image = im
     imx_shape = image.shape[0]
     imy_shape = image.shape[1]
     max_value = max_levels
@@ -60,8 +58,8 @@ def build_gaussian_pyramid(im, max_levels, filter_size):
     return pyr, filter_vec
 
 
-def build_laplacian_pyramid(im, max_levels, filter_size):
-    gaussian_pyramid, filter_vec = build_gaussian_pyramid(im, max_levels, filter_size)
+def build_laplacian_pyramid(image, max_levels, filter_size):
+    gaussian_pyramid, filter_vec = build_gaussian_pyramid(image, max_levels, filter_size)
     pyr = []
 
     for i in range(len(gaussian_pyramid) - 1):
@@ -81,12 +79,12 @@ def reduce(filter_vec, im):
     return image[::2, ::2]
 
 
-def expand(im_b, im_s, filter_vec):
-    zeros_arr = np.zeros(im_b.shape)
-    zeros_arr[::2, ::2] = im_s
+def expand(image_b, image_s, filter_vec):
+    zeros_arr = np.zeros(image_b.shape)
+    zeros_arr[::2, ::2] = image_s
     image = ni.filters.convolve(zeros_arr, 2 * filter_vec)
-    image = ni.filters.convolve(image, (2 * filter_vec).T)
-    return image
+    return ni.filters.convolve(image, (2 * filter_vec).T)
+
 
 
 def laplacian_to_image(lpyr, filter_vec, coeff):
@@ -124,9 +122,9 @@ def display_pyramid(pyr, levels):
     plt.show()
 
 
-def pyramid_blending(im1, im2, mask, max_levels, filter_size_im, filter_size_mask):
-    laplacian1, v1 = build_laplacian_pyramid(im1, max_levels, filter_size_im, )
-    laplacian2, v2 = build_laplacian_pyramid(im2, max_levels, filter_size_im, )
+def pyramid_blending(im1, im2, mask, max_levels, filter_size_image, filter_size_mask):
+    laplacian1, v1 = build_laplacian_pyramid(im1, max_levels, filter_size_image, )
+    laplacian2, v2 = build_laplacian_pyramid(im2, max_levels, filter_size_image, )
     mask = mask.astype('float64')
     gaussian_mask, vm = build_gaussian_pyramid(mask, max_levels, filter_size_mask)
     pyr = []
@@ -148,7 +146,8 @@ def blending_example(image1_path, image2_path, mask_path):
     im2 = read_image(relpath(image2_path), Representation.GRAY)
     mask = read_image(relpath(mask_path), Representation.RGB).astype(np.bool)
     blend_im = np.zeros(im1.shape)
-    im1_red, im1_green, im1_blue  = im1[:, :, 0], im1[:, :, 1], im1[:, :, 2]
+
+    im1_red, im1_green, im1_blue = im1[:, :, 0], im1[:, :, 1], im1[:, :, 2]
     im2_red, im2_green, im2_blue = im2[:, :, 0], im2[:, :, 1], im2[:, :, 2]
     blend_im[:, :, 0], blend_im[:, :, 1], blend_im[:, :, 2] = \
         pyramid_blending(im1_red, im2_red, mask, 10, 7, 5), \
@@ -167,8 +166,10 @@ def blending_example(image1_path, image2_path, mask_path):
 
 
 if __name__ == "__main__":
-    example = int(input("Choose which example to run: 1 for Thor, 2 for Shark eating Tiger "))
+    example = int(input("Choose which example to run: 1 for Thor, 2 for Shark eating Tiger.\n"))
     if example == 1:
         blending_example('externals/im1.jpg', 'externals/im2.jpg', 'externals/mask.jpg')
     elif example == 2:
         blending_example('externals/im11.jpg', 'externals/im22.jpg', 'externals/mask2.jpg')
+    else:
+        print("The input you entered is incorrect, please run again.")
