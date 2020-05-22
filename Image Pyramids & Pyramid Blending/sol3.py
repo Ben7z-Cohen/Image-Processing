@@ -166,7 +166,7 @@ def blending_example(image1_path, image2_path, mask_path):
 
 
 if __name__ == "__main__":
-    example = int(input("Choose which example to run: 1 for Thor, 2 for Shark eating Tiger.\n"))
+    example = int(input("Choose which example to run:\n 1.Thor image.\n 2.Shark eating tiger image.\n"))
     if example == 1:
         blending_example('externals/im1.jpg', 'externals/im2.jpg', 'externals/mask.jpg')
     elif example == 2:
